@@ -3,7 +3,6 @@
 def call(String buildResult) {
   if ( buildResult == "SUCCESS" ) {
     slackSend color: "good", message: "CONGRATULATION: Job ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful ! more info ${env.BUILD_URL}"
-    slackUploadFile filePath: "https://upload.wikimedia.org/wikipedia/commons/9/90/Airbus_A320-271N_NEO_D-AVVA.jpg", initialComment:  "test"
   }
   else if( buildResult == "FAILURE" ) { 
     slackSend color: "danger", message: "BAD NEWS:Job ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was failed ! more info ${env.BUILD_URL}"
